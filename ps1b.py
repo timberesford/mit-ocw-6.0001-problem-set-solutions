@@ -26,7 +26,7 @@ portion_down_payment = 0.25
 current_savings = 0                                                             
 # Annual equivalent rate on savings expressed as decimal
 r = 0.04                                                
-# Caluculates monthly equivalent rate on savings                        
+# Calculates monthly equivalent rate on savings                        
 monthly_r = ((1+r)**(1/12))-1
 
 ## Assign 6 to initial raise month
@@ -39,7 +39,7 @@ monthly_r = r/12                                                              # 
 
 ## RETRIEVAL OF DATA INPUTTED BY USER
 
-# Annual, take home salary retrieved from user (problem set states assumption that this will be valid number)
+# Annual take home salary retrieved from user (problem set states assumption that this will be valid number)
 annual_salary = input("Please enter your annual salary (after tax) in £: ")     
 # Converts inputted value for annual_salary to float class
 annual_salary = float(annual_salary)                                            
@@ -48,8 +48,7 @@ annual_salary = float(annual_salary)
 portion_saved = input("Please enter the percentage of your income you wish to put aside each month (as a % with a value between 1-100): ") 
 # Converts portion_saved to float and performs float division to convert to decimal
 portion_saved = float(portion_saved)/100
-print(portion_saved)
-120
+
 
 # Retrieves cost of dream home from user                                        
 total_cost = input("Please enter the cost of your dream home in £: ")
@@ -60,7 +59,7 @@ total_cost = float(total_cost)
 semi_annual_raise = input("Please enter your semi-annual raise (as a % with a value between 1-100): ") 
 # Converts portion_saved to float and performs float division to convert to decimal
 semi_annual_raise = float(semi_annual_raise)/100
-print(semi_annual_raise)
+
 
 
 ## CALCULATING VALUES REQUIRED TO DETERMINE RESULT
@@ -69,13 +68,12 @@ print(semi_annual_raise)
 down_payment_required = portion_down_payment*total_cost                         
 
 
-
 ## CALCULATING HOW MANY MONTHS NEEDED TO REACH TARGET
 
 # Assign zero to number of months
 number_of_months = 0
 
-# while loop to calulate savings after each month has passed, exiting once target exceeded
+# while loop to calculate savings after each month has passed, exiting once target exceeded
 while current_savings < down_payment_required:
     # increase month count by 1
     number_of_months += 1      
@@ -87,10 +85,8 @@ while current_savings < down_payment_required:
     current_savings += monthly_savings
     # check if salary due to raise and execute raise if so
     if number_of_months == raise_month:
-        print(annual_salary)
         # multiply salary by raise %
         annual_salary += annual_salary*semi_annual_raise
-        print(annual_salary)
         # increase raise month value
         raise_month += 6
 print("Number of months required to meet goal: ",number_of_months)
