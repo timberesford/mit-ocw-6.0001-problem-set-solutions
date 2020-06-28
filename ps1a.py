@@ -26,7 +26,7 @@ portion_down_payment = 0.25
 current_savings = 0                                                             
 # Annual equivalent rate on savings expressed as decimal
 r = 0.04                                                
-# Caluculates monthly equivalent rate on savings                        
+# Calculates monthly equivalent rate on savings                        
 monthly_r = ((1+r)**(1/12))-1                                                   
 
 ##############################################################################
